@@ -1,40 +1,33 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-
-const Profile = () => {
-  return <h2>Страница профиля</h2>;
-};
-
-const Workout = () => {
-  return <h2>Занятия и оплата</h2>;
-};
-
-const Grade = () => {
-  return <h2>Мои достижения</h2>;
-};
+import Home from './pages/about';
+import Contact from './pages/contacts';
+import Staff from './pages/staff';
+import SignUp from './pages/signup';
+import About from './pages/about'
+import Calendar from './pages/calendar'
+import Navbar from './components/Navbar/Navbar';
+import { useEffect } from 'react';
 
 function App() {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-sm-3">
-          <div className="nav flex-column nav-pills" aria-orientation="vertical">
-            <NavLink className="nav-link" to={"profile"}>Профиль</NavLink>
-            <NavLink className="nav-link" to={"workout"}>Занятия и оплата</NavLink>
-            <NavLink className="nav-link" to={"grade"}>Мои достижения</NavLink>
-          </div>
-        </div>
+    useEffect(() => {
+      document.title = 'Школа гимнастики Звездочка'
+    },[]),
+    <>
+    <Navbar/>
+    <Routes>
+      <Route exact path='/' element={<Home/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/contact' element={<Contact/>} />
+      <Route path='/staff' element={<Staff/>} />
+      <Route path='/calendar' element={<Calendar/>} />
+      <Route path='/sign-up/*' element={<SignUp/>} />
 
-        <div className="col-sm-9">
-          <Routes>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/workout" element={<Workout/>}/>
-            <Route path="/grade" element={<Grade/>}/>
-          </Routes>
-        </div>
-      </div>
-    </div>
+    </Routes>
+    </>
   );
 }
 
 export default App;
+

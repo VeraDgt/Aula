@@ -7,16 +7,19 @@ return (
 <Nav>
 <NavMenu>
 <NavLink to="/about" activeStyle>
-About
+О компании
 </NavLink>
 <NavLink to="/contact" activeStyle>
-Contact Us
+Контакты
 </NavLink>
-<NavLink to="/blogs" activeStyle>
-Blogs
+<NavLink to="/staff" activeStyle>
+Наши тренеры
+</NavLink>
+<NavLink to="/calendar" activeStyle>
+Расписание занятий
 </NavLink>
 <NavLink to="/sign-up" activeStyle>
-Sign Up
+Личный кабинет
 </NavLink>
 </NavMenu>
 </Nav>
