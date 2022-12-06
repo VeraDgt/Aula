@@ -1,5 +1,13 @@
 import Iframe from "react-iframe";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
+const Mailto = ({ email, subject = '', body = '', children }) => {
+  let params = subject || body ? '?' : '';
+  if (subject) params += `subject=${encodeURIComponent(subject)}`;
+  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+  return <a href={`mailto:${email}${params}`}>{children}</a>;
+};
 export const Contact = () => {
   return (
     <div className="parentDiv container-fluid-mt-5">
@@ -11,10 +19,10 @@ export const Contact = () => {
           <div className="mt-5">
             <h2>Адрес:</h2>
             <p>Москва, Ярославское шоссе, д. 26 кор. 4</p>
-            <h5>Телефон:</h5>
-            <p>+ 7 (095) 222-33-22</p>
+            <p><BsFillTelephoneFill /> + 7 (095) 222-33-22</p>
             <h5>E-mail:</h5>
-            <p style={{color: "blue"}}>info@zvezdochka.ru</p>
+            <Mailto email="info@zvezdochka.ru" subject="Hello" body="Hello">
+            info@zvezdochka.ru</Mailto>
           </div>
         </div>
       </div>
