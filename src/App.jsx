@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/about';
-import Contact from './pages/contacts';
-import Staff from './pages/staff';
-import SignUp from './pages/signup';
+import { Contact } from './pages/contacts';
+import { Staff } from './pages/staff';
+import { SignUp } from './pages/signup';
 import About from './pages/about'
-import Calendar from './pages/calendar'
-import Navbar from './components/Navbar/Navbar';
+import { Calendar } from './pages/calendar'
+import { Navbar } from './components/Navbar/Navbar';
 import { useEffect } from 'react';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
       <Route path='/staff' element={<Staff/>} />
       <Route path='/calendar' element={<Calendar/>} />
       <Route path='/sign-up/*' element={<SignUp/>} />
-
     </Routes>
+    <Footer/>
     </>
   );
 }

@@ -1,9 +1,11 @@
-const Workout = () => {
+import HappyNY from '../../assets/img/s-novym-godom.gif'
+
+export const Workout = () => {
 
   return (
     <div>
-      <h1>Занятия и оплата</h1>
+      <p><img src={HappyNY} alt="" width={"100%"} />
+      </p>
     </div>
   );
 };
-export default Workout;

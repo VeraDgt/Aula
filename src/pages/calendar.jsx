@@ -1,19 +1,14 @@
 import Iframe from 'react-iframe';
-import HappyNY from '../assets/img/s-novym-godom.gif'
 
-const Calendar = () => {
+export const Calendar = () => {
   return (
     <>
-    <div className="row">
-      <div className="col-md-4">
-        <Iframe url="https://calendar.google.com/calendar/embed?src=e24b10fa084d5c6d43fc855e5012e4378726e39123dfd4824bc397e59e0b8f4a%40group.calendar.google.com&ctz=Europe%2FMoscow" 
-        width="300" height="300" id="Calendar" display="block" position="relative" />
-        </div>
-      <div className="col-md-8"><img src={HappyNY} alt="" width={"100%"} />
-      </div>
-    </div>
+    <row className="row">
+      
+        <Iframe url="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23EF6C00&ctz=Europe%2FMoscow&showTitle=1&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showDate=0&showTz=0&mode=WEEK&src=ZTI0YjEwZmEwODRkNWM2ZDQzZmM4NTVlNTAxMmU0Mzc4NzI2ZTM5MTIzZGZkNDgyNGJjMzk3ZTU5ZTBiOGY0YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237CB342" 
+        width="100%" height="400" id="Calendar" display="block" position="relative" />
+
+    </row>
     </>
   );
-};
-
-export default Calendar;
+}
